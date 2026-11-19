@@ -1,1 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidney Igadwa | Electronics &amp; Computer Engineer</title>
+<meta name="description" content="Projects by Sidney Igadwa: IoT, embedded systems, software, and machine learning.">
+<meta property="og:title" content="Sidney Igadwa | Projects">
+<meta property="og:description" content="IoT, embedded systems, software, and machine learning projects.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f0ead6; --surface:#e8dcc6; --ink:#3a3436; --muted:#665f62;
+  --accent:#b83f2b; --tan:#c9b08f; --line:#d6c9ae; --btn:#f7f2e6;
+  --head:"Petrona",Georgia,"Times New Roman",serif;
+  --body:"Petrona",Georgia,"Times New Roman",serif;
+}
+:root[data-theme="dark"]{
+  --bg:#1f1a18; --surface:#2a2320; --ink:#efe7d6; --muted:#b3a998;
+  --accent:#ee8a76; --tan:#8b7a63; --line:#3a312c; --btn:#1f1a18;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.2rem/1.55 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem;flex-wrap:wrap}
+.brand{font:800 1.2rem var(--head);text-decoration:none;color:var(--ink)}
+nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;font:600 1.05rem var(--head)}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+#theme{font:600 .95rem var(--head);background:none;border:1px solid var(--line);color:var(--ink);padding:.3rem .8rem;border-radius:999px;cursor:pointer}
 
+.hero{padding:4rem 0 2.5rem}
+.hero h1{font:700 clamp(2.6rem,8vw,5rem)/1.02 var(--head);letter-spacing:-.02em;margin:0 0 1rem}
+.hero p{max-width:36rem;font-size:1.35rem;margin:0}
+
+section{padding:2.8rem 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(1.8rem,4vw,2.4rem)/1.15 var(--head);letter-spacing:-.01em;margin:0 0 1.6rem}
+
+/* project cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:1.6rem;list-style:none;margin:0;padding:0}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.shot{aspect-ratio:16/10;width:100%;object-fit:cover;display:block;background:var(--line);border-bottom:1px solid var(--line)}
+.shot.none{display:grid;place-items:center;font:600 1rem var(--head);color:var(--muted)}
+.body{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.card h3{font:700 1.4rem/1.2 var(--head);margin:0}
+.card p{margin:0;font-size:1.1rem;line-height:1.45}
+.tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.3rem}
+.tag{font:500 .9rem var(--head);border:1px solid var(--tan);padding:.1rem .6rem;border-radius:4px;color:var(--muted)}
+.plinks{display:flex;gap:1.1rem;font:600 1rem var(--head)}
+
+.about p{max-width:38rem;margin:0 0 .8rem}
+
+.sub{color:var(--muted);max-width:36rem;margin:0 0 1.4rem}
+form[hidden]{display:none}
+form{display:grid;gap:.9rem;max-width:34rem;margin-top:1.6rem;animation:open .25s ease-out}
+@keyframes open{from{opacity:0;transform:translateY(-6px)}}
+label{font:600 1rem var(--head)}
+input,textarea{width:100%;font:1.05rem var(--body);padding:.6rem .8rem;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:6px}
+button.send{justify-self:start;font:700 1.05rem var(--head);background:var(--accent);color:var(--btn);border:0;padding:.7rem 1.4rem;border-radius:6px;cursor:pointer}
+.notice{max-width:34rem;margin-top:1.2rem;padding:.8rem 1rem;border-radius:6px;font:600 1.05rem var(--head)}
+.notice:empty,.ferr:empty{display:none}
+.notice.ok{background:var(--surface);border-left:4px solid var(--accent)}
+.notice.bad{border:1.5px solid var(--accent);color:var(--accent)}
+.ferr{display:block;margin-top:.25rem;color:var(--accent);font:500 .95rem var(--head)}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--accent)}
+button.send:disabled{opacity:.6;cursor:wait}
+.links{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:1.8rem;font:600 1.05rem var(--head)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){form{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">Sidney Igadwa</a>
+    <nav aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact" id="navContact">Contact</a>
+      <button id="theme" type="button" aria-label="Switch light or dark theme">Theme</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>Sidney Igadwa</h1>
+      <p>Building systems that make work easier.</p>
+    </div>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="grid" id="grid"></ul>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>When Hardware meets software, hit the contact button.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="sub">Want to collaborate or talk about a project?</p>
+      <button class="send" id="contactBtn" type="button" aria-expanded="false" aria-controls="contactForm">Get in touch</button>
+      <div class="notice ok" data-fs-success role="status"></div>
+      <div class="notice bad" data-fs-error role="alert"></div>
+      <form id="contactForm" action="https://formspree.io/f/mkjrbydd" method="POST" hidden>
+        <div>
+          <label for="n">Name</label>
+          <input id="n" name="name" data-fs-field required>
+          <span class="ferr" data-fs-error="name"></span>
+        </div>
+        <div>
+          <label for="e">Email</label>
+          <input id="e" name="email" type="email" data-fs-field required>
+          <span class="ferr" data-fs-error="email"></span>
+        </div>
+        <div>
+          <label for="m">Message</label>
+          <textarea id="m" name="message" rows="5" data-fs-field required></textarea>
+          <span class="ferr" data-fs-error="message"></span>
+        </div>
+        <button class="send" type="submit" data-fs-submit-btn>Send message</button>
+      </form>
+      <div class="links">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://github.com/your-username">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="yr"></span> Sidney Igadwa</footer>
+</div>
+
+<script>
+/* ============================================================
+   ADD A NEW PROJECT: copy one block, paste it at the TOP of the
+   list, and change the text. Newest first.
+
+   image:  path to a screenshot, e.g. "images/water-monitor.png"
+           (put the file in an "images" folder next to index.html).
+           Leave "" to show a placeholder.
+   description: keep it to about two lines.
+   tech:   technologies used.
+   code / live: links, or "" if there isn't one.
+   ============================================================ */
+const projects = [
+  {
+    title: "Example: Smart water-tank monitor",
+    image: "",
+    description: "Measures tank levels with an ultrasonic sensor and sends alerts to a phone. Replace with your own project.",
+    tech: ["ESP32", "C++", "MQTT"],
+    code: "https://github.com/your-username/water-monitor",
+    live: ""
+  },
+  {
+    title: "Example: Sensor data dashboard",
+    image: "",
+    description: "A web dashboard showing live readings from field devices. Replace with your own project.",
+    tech: ["Node.js", "React", "PostgreSQL"],
+    code: "https://github.com/your-username/dashboard",
+    live: "https://example.com"
+  },
+  {
+    title: "Example: Tiny ML classifier",
+    image: "",
+    description: "A small model running on a microcontroller to classify sensor readings. Replace with your own project.",
+    tech: ["Python", "TensorFlow Lite", "Arduino"],
+    code: "",
+    live: ""
+  }
+];
+
+/* ---------- Everything below draws the page. No need to edit. ---------- */
+const grid = document.getElementById("grid");
+function el(tag, cls, text){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text) e.textContent = text;
+  return e;
+}
+function placeholder(){ return el("div","shot none","Screenshot coming soon"); }
+
+projects.forEach(p => {
+  const li = el("li","card");
+  if(p.image){
+    const img = el("img","shot");
+    img.src = p.image; img.alt = "Screenshot of " + p.title; img.loading = "lazy";
+    img.addEventListener("error", () => img.replaceWith(placeholder()));
+    li.appendChild(img);
+  } else { li.appendChild(placeholder()); }
+
+  const body = el("div","body");
+  body.appendChild(el("h3","",p.title));
+  body.appendChild(el("p","",p.description));
+  const tags = el("div","tags");
+  p.tech.forEach(t => tags.appendChild(el("span","tag",t)));
+  body.appendChild(tags);
+
+  if(p.code || p.live){
+    const links = el("div","plinks");
+    [["Code",p.code],["Live demo",p.live]].forEach(([label,href]) => {
+      if(!href) return;
+      const a = el("a","",label);
+      a.href = href; a.rel = "noopener";
+      links.appendChild(a);
+    });
+    body.appendChild(links);
+  }
+  li.appendChild(body);
+  grid.appendChild(li);
+});
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+document.getElementById("theme").addEventListener("click", () => {
+  const r = document.documentElement;
+  r.setAttribute("data-theme", r.getAttribute("data-theme") === "light" ? "dark" : "light");
+});
+const cBtn = document.getElementById("contactBtn"), cForm = document.getElementById("contactForm");
+function setForm(open){
+  cForm.hidden = !open;
+  cBtn.setAttribute("aria-expanded", open);
+  cBtn.textContent = open ? "Hide form" : "Get in touch";
+  if(open) document.getElementById("n").focus({preventScroll:true});
+}
+cBtn.addEventListener("click", () => setForm(cForm.hidden));
+document.getElementById("navContact").addEventListener("click", () => setForm(true));
+</script>
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contactForm', formId: 'mkjrbydd' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
